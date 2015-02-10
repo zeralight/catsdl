@@ -22,8 +22,9 @@ typedef struct
 typedef enum {FREE_POSITION, REMOVED_POSITION, CAT_POSITION} positionType;
 typedef positionType GameMap[ML][MC];
 typedef enum {CAT_WIN, CAT_LOSE} GameOutput;
-
+typedef enum {LEFT = 4, RIGHT = 6, TOP_LEFT = 7, TOP_RIGHT = 9, BOT_LEFT = 1, BOT_RIGHT = 3} Movement;
 void initMap(GameMap m);
 void showMap(GameMap m);
 GameOutput game(GameMap m);
+void moveCat(Position *catPos, Movement movement, GameMap map);
 #endif // GAME_H_INCLUDED
